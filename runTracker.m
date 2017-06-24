@@ -1,13 +1,13 @@
 
 % RUN_TRACKER  is the external function of the tracker - does initialization and calls trackerMain
     close all;clear;
-%     addpath(genpath(pwd));%Ìí¼Óµ±Ç°Â·¾¶ÏÂµÄËùÓĞ×ÓÄ¿Â¼
+%     addpath(genpath(pwd));%æ·»åŠ å½“å‰è·¯å¾„ä¸‹çš„æ‰€æœ‰å­ç›®å½•
     %% Read params.txt
     params = readParams('params.txt');
 	%% load video info
-     base_path = 'F:\Ğì¸£À´\Ò°Íâ¹Û²â\database\benchmark50';
-     base_path = 'F:\Ğì¸£À´\Ò°Íâ¹Û²â\database\Ò°ÍâÊı¾İ¼¯';
-%     base_path ='F:\Ğì¸£À´\Ò°Íâ¹Û²â\database\ĞÂ½¨ÎÄ¼ş¼Ğ\benchmark50';
+
+%     base_path = 'F:\å¾ç¦æ¥\é‡å¤–è§‚æµ‹\database\benchmark50';
+%     base_path =æ•°æ®é›†çš„æ–‡ä»¶å¤¹ï¼Œå¦‚ä¸Šä¸€è¡Œ;
 
     [sequence_path,video_name] = choose_video(base_path);
     if isempty(sequence_path), return, end  %user cancelled
@@ -22,16 +22,16 @@
     if(size(im,3)==1)
         params.grayscale_sequence = true;
     end
-    %Í¼ÏñËõĞ¡´¦Àí
+    %å›¾åƒç¼©å°å¤„ç†
 %     params.resize_image = (sqrt(prod(target_sz)) >= 400);
 %     if params.resize_image
 % 		pos = floor(pos / 2);
 % 		target_sz = floor(target_sz / 2);
 %         im = imresize(im,0.5 );  
 %     end
-%         params.s00 = sqrt(target_sz(1)*target_sz(2)/8000);%¼ÆËãÄ¿±ê´óĞ¡ÊÇ·ñ³¬¹ıÁË4000£¬Èç¹ûÊÇÔòËõĞ¡£¬·ñÔò
-%         params.s00  = max(params.s00 ,1);                           %°´ÕÕ1±¶¼´²»´¦Àí
-%         target_sz = floor(target_sz/params.s00 );           %Ä¿±ê´óĞ¡ÒÔ¼°Î»ÖÃ¾ùÒÑ°´ÕÕËõ·Å´¦Àí
+%         params.s00 = sqrt(target_sz(1)*target_sz(2)/8000);%è®¡ç®—ç›®æ ‡å¤§å°æ˜¯å¦è¶…è¿‡äº†4000ï¼Œå¦‚æœæ˜¯åˆ™ç¼©å°ï¼Œå¦åˆ™
+%         params.s00  = max(params.s00 ,1);                           %æŒ‰ç…§1å€å³ä¸å¤„ç†
+%         target_sz = floor(target_sz/params.s00 );           %ç›®æ ‡å¤§å°ä»¥åŠä½ç½®å‡å·²æŒ‰ç…§ç¼©æ”¾å¤„ç†
 %         pos = floor(pos/params.s00 );
 %         im = imresize(im,1/params.s00 );   
         
