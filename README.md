@@ -1,4 +1,4 @@
-
+Real-time Wildlife Visual Tracking with Occlusion Awareness.
 
 ###Prerequisites
  - The code is mostly in MATLAB, except the workhorse of `fhog.m`, which is written in C and comes from Piotr Dollar toolbox http://vision.ucsd.edu/~pdollar/toolbox
